@@ -236,7 +236,7 @@ private:
 
             if (meta_prop.type() >= QVariant::UserType && in_recursive == true)
             {
-                const QMetaObject* sub_meta_object = QMetaType::metaObjectForType(meta_prop.type());
+                const QMetaObject* sub_meta_object = QMetaType::metaObjectForType(meta_prop.userType());
                 if (sub_meta_object == 0) continue;
                 qDebug() << "sub_meta_object:" << sub_meta_object->className();
 

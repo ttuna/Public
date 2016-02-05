@@ -32,11 +32,10 @@ bool RegisterTestAppl::init()
     if (m_test == nullptr) return false;
 
     // swap this calls just for fun ... ;-)
-    id = qRegisterMetaType<TestPropertyObject*>("TestPropertyObjectPtr");
-    qDebug() << "qRegisterMetaType<TestPropertyObject*>:" << id;
-
     id = qRegisterMetaType<IntList>("IntList");
     qDebug() << "qRegisterMetaType<IntList>:" << id;
+    id = qRegisterMetaType<TestPropertyObject*>("TestPropertyObjectPtr");
+    qDebug() << "qRegisterMetaType<TestPropertyObject*>:" << id;
 
     m_initialized = true;
     return m_initialized;

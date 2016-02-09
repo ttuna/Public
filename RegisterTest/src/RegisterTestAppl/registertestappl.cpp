@@ -56,7 +56,8 @@ void RegisterTestAppl::runTest()
 {
     if (m_initialized == false) return;
 
-    QVariantMap prop_map = PropertyAccessor::Get<RegisterTestAppl>(*this, true);
+    //QVariantMap prop_map = PropertyAccessor::Get<RegisterTestAppl>(*this, true);
+    QVariantMap prop_map = PropertyAccessor::GetNew(this, true);
     qDebug() << prop_map;
 
     PropertyPersistor::toFile<RegisterTestAppl>(*this, QLatin1String("prop.json"));

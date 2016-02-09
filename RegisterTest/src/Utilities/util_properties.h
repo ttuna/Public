@@ -162,6 +162,21 @@ public:
         return prop_map;
     }
 
+
+    // ----------------------------------------------------------------------------
+    // GetNew ... works :-)
+    // ----------------------------------------------------------------------------
+    static const QVariantMap GetNew(const QObject* in_obj, const bool in_recursive = false)
+    {
+        const QMetaObject* meta_object = in_obj->metaObject();
+        if (meta_object == 0) return QVariantMap();
+
+        QVariantMap prop_map;
+        prop_map = GetPropertyVariantMap(in_obj, meta_object, in_recursive);
+
+        return prop_map;
+    }
+
     // ----------------------------------------------------------------------------
     // Check
     // ----------------------------------------------------------------------------
